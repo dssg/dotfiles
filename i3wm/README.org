@@ -1,4 +1,0 @@
-Files
-
-98-monitor-hotplug.rules  --> /etc/udev/rules.d/98-monitor-hotplug.rules
-monitor-hotplug.sh        --> $HOME/bin/monitor-hotplug.sh
