@@ -18,7 +18,7 @@ install_dotfiles () {
 make_symbolic_links () {
     printf "$BBLUE Creating required symbolic links.\n$RESET"
 
-    for ARCHIVO in .bashrc .zshrc .irbrc .screenrc .gitconfig .psqlrc .tmux.conf .Xdefaults .Xresources
+    for ARCHIVO in .bashrc .zshrc .screenrc .gitconfig .gitignore .psqlrc .sqliterc .tmux.conf
     do
         if [ -f $HOME/$ARCHIVO ] && [ ! -h $HOME/$ARCHIVO ]
         then
