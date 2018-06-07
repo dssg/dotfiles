@@ -6,11 +6,11 @@
 -- PROMPT2 es lo que imprime cuando está esperando más input
 \set PROMPT2 '[more] %R > '
 
--- Muestra cuanto tarda un query en ejecutarse
+-- Query elapsed time
 \timing on
 
--- El mejor formato de salida
--- NOTA: si vas a correr un scrip tpara sacar datos a un archivo, recuerda desactivar la configuración
+-- Best output format ever!
+-- NOTE: If you are running an script remember to deactivate this configuration!
 --
 \x auto
 \set VERBOSITY verbose

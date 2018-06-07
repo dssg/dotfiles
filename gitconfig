@@ -1,7 +1,7 @@
 [user]
-    name = Adolfo De Unánue
-    mail = nanounanue@gmail.com
-    email = nanounanue@gmail.com
+    name = your_name
+    mail = your_email
+    email = your_email
 
 [core]
     editor = emacsclient -t
@@ -42,7 +42,7 @@
     tool = meld
 
 [github]
-    user = nanounanue
+    user = your_githubuser
 
 [push]
     default = current
@@ -55,7 +55,7 @@
 
 
 ## Trick from http://michaelwales.com/articles/make-gitconfig-work-for-you/
-## You can use it as git clone gh:nanounanue/test
+## You can use it as git clone gh:dssg/test
 
 [url "https://github.com/"]
     insteadOf = gh:
@@ -136,7 +136,7 @@
     trim = !git reflog expire --expire=now --all && git gc --prune=now
 
     ## Taken from https://gist.github.com/pksunkara/988716
-    
+
     ours = "!f() { git checkout --ours $@ && git add $@; }; f"
     theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
     #############

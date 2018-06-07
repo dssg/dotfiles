@@ -1,18 +1,8 @@
 (setq gc-cons-threshold 402653184
       gc-cons-percentage 0.6)
 
-(defun config-open ()
-  (interactive)
-  (find-file "~/dotfiles/emacs/nano-emacs.org"))
-(global-set-key (kbd "C-c e") 'config-open)
 
-(defun config-reload ()
-  "Reloads ~/dotfiles/emacs/nano-emacs.org"
-  (interactive)
-  (org-babel-load-file (expand-file-name "~/dotfiles/emacs/nano-emacs.org")))
-(global-set-key (kbd "C-c r") 'config-reload)
-
-; Enable "package", for installing packages
+                                        ; Enable "package", for installing packages
                                         ; Add some common package repositories
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -44,11 +34,7 @@
 
 (display-time-mode 1)
 
-(setq user-full-name "Adolfo De Unánue")
-(setq user-mail-address "nanounanue@gmail.com")
 
-;;(set-face-attribute 'default nil
-;;                     :height 100)
 
 ;; force consistent font height by using the biggest font for spaces:
 (global-whitespace-mode t)
@@ -1011,8 +997,6 @@
   (setq org-clock-history-length 23)
   ;; Resume clocking task on clock-in if the clock is open
   (setq org-clock-in-resume t)
-  ;; Change tasks to NEXT when clocking in
-  (setq org-clock-in-switch-to-state 'nanounanue/clock-in-to-next)
   ;; Separate drawers for clocking and logs
   (setq org-drawers (quote ("PROPERTIES" "LOGBOOK")))
   ;; Save clock data and state changes and notes in the LOGBOOK drawer
@@ -1384,51 +1368,6 @@
   (add-hook 'python-mode-hook 'anaconda-mode)
   (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
 
-(use-package org-page
-  :ensure t
-  :config
-  (progn
-    (setq op/repository-directory "~/proyectos/nanounanue.github.io")   ;; the repository location
-    (setq op/site-domain "http://nanounanue.github.io")         ;; your domain
-    ;;; the configuration below you should choose one, not both
-    ;;(setq op/personal-disqus-shortname "your_disqus_shortname")    ;; your disqus commenting system
-    ;;(setq op/personal-duoshuo-shortname "your_duoshuo_shortname")  ;; your duoshuo commenting system
-    ;;(setq op/hashover-comments t)                                   ;; activate hashover self-hosted comment system
-    (setq op/personal-avatar "https://avatars2.githubusercontent.com/u/494528?v=3&s=460")
-    ;; for commenting; disabled for now
-    ;;(setq op/personal-disqus-shortname "your_disqus_shortname")
-
-    ;; analytics set up at ~/.emacs.secrets file
-    ;;(setq op/personal-google-analytics-id "UA-NNNNNNNN-N")
-
-    (setq op/personal-github-link "https://github.com/nanounanue")
-
-    (setq op/site-main-title "nanounanue @ home")
-    (setq op/site-sub-title "...")
-
-    ;; set up my own theme since a sans option does not exist
-    ;;(setq op/theme-root-directory "~/src/org-page/heikkil.github.io/themes")
-    ;;(setq op/theme 'sans)  ; mdo is the default
-
-    )
-  )
-
-(use-package blog-admin
-  :ensure t
-  :defer t
-  :commands blog-admin-start
-  :init
-  (progn
-    ;; do your configuration here
-    (setq blog-admin-backend-type 'org-page)
-    (setq blog-admin-backend-path "~/proyectos/nanounanue.github.io")
-    (setq blog-admin-backend-new-post-in-drafts t)
-    (setq blog-admin-backend-new-post-with-same-name-dir t)
-    (setq blog-admin-backend-org-page-drafts "_drafts") ;; directory to save draft
-    ;;(setq blog-admin-backend-org-page-config-file "/path/to/org-page/config.el") ;; if nil init.el is used
-    )
-  )
-
 (use-package hideshow
   :ensure t
   :config
@@ -1552,16 +1491,6 @@
   (add-to-list 'auto-mode-alist
                '("/vcs/gitconfig\'"    . gitconfig-mode)))
 
-(use-package magithub
-  :disabled
-  :after magit
-  :ensure t
-  :config
-  (magithub-feature-autoinject t)
-
-  (setq ghub-username "nanounanue")
-
-  )
 
 (use-package magit-gitflow
   :ensure t
@@ -2234,12 +2163,6 @@ _k_: previous error    _l_: last error
 ;; saner regex syntax
 (require 're-builder)
 (setq reb-re-syntax 'string)
-
-(defun nanounanue/find_config ()
-  (interactive)
-  (find-file "~/dotfiles/emacs/nano-emacs.org"))
-
-(global-set-key (kbd "C-c I") 'nanounanue/find_config)
 
 (use-package exec-path-from-shell
   :ensure t

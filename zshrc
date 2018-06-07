@@ -9,16 +9,6 @@ source ~/dotfiles/env
 # Alias
 source ~/dotfiles/aliases
 
-
-# Sourcing fonts
-source ~/.fonts/devicons-regular.sh
-source ~/.fonts/fontawesome-regular.sh
-source ~/.fonts/pomicons-regular.sh
-source ~/.fonts/octicons-regular.sh
-
-# Show OS info when opening a new terminal
-neofetch
-
 ##############################
 ##
 ## Antigen
